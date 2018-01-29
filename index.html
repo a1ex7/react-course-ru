@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React [RU] Tutorial</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <div id="root">#root</div>
+
+    <script src="js/react/react.min.js"></script>
+    <script src="js/react/react-dom.min.js"></script>
+    <script src="js/react/EventEmitter.min.js"></script>
+    <!-- <script src="js/react/browser.min.js"></script>  -->
+    <!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+    <!-- <script type="text/babel" src="js/app.jsx"></script> -->
+    <script src="js/system/system.js"></script>
+    <script>
+        SystemJS.config({
+            map: {
+                'plugin-babel': 'js/system/plugin-babel/plugin-babel.js',
+                'systemjs-babel-build': 'js/system/plugin-babel/systemjs-babel-browser.js'
+            },
+            transpiler: 'plugin-babel',
+            meta: {
+                '*.jsx': {
+                    babelOptions: {
+                        react: true
+                    }
+                }
+            }
+        });
+        SystemJS.import('js/app.jsx');
+    </script>
+</body>
+
+</html>
